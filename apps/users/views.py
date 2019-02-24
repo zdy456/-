@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 # Create your views here.
 def testview(request):
-    print("11")
+    print("1122")
     return HttpResponse('这是测试')
