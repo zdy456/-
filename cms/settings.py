@@ -27,9 +27,6 @@ SECRET_KEY = '9fscrp!vhn2=na!exp2qeai&2ixtw)sw0z)=@b*8ozy+(pt4=3'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,10 +37,13 @@ INSTALLED_APPS = [
     'corsheaders',  # 注册解决跨域请求的包
     'rest_framework',  # 注册rest框架
     'users',  # 注册用户应用
-    'carts',  # 注册购物车应用
     'goods',  # 注册商品应用
     'news',  # 注册新闻应用
+    'carts',  # 注册购物车应用
 ]
+
+# Application definition
+
 # 注册自定义的用户模型类
 AUTH_USER_MODEL = 'users.User'
 

@@ -2,7 +2,7 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.news.models import News, NewsCategory
+from news.models import News, NewsCategory
 from news.serializer import NewSerializer, NewCategorySerializer
 
 

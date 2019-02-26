@@ -18,7 +18,7 @@ var vm = new Vue({
         // 初始化显示顶部的新闻数据
         init_top_news: function () {
             // console.log('11111');
-            axios.get(this.host+'news/top/')
+            axios.get(this.host+'/news/top/')
                 .then(response => {
                     // alert(response)
                     this.slide_news = response.data.slide_news;
@@ -35,7 +35,7 @@ var vm = new Vue({
 
         // 初始化显示类别新闻数据
         init_category_news: function () {
-            axios.get(this.host+'news/category/')
+            axios.get(this.host+'/news/category/')
                 .then(response => {
                     this.categories=response.data;
 
