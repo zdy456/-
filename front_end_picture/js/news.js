@@ -1,7 +1,8 @@
 var vm = new Vue({
     el: '#app',
     data: {
-        messages: [1,2,3],
+        host,
+        messages: [1, 2, 3],
         slide_news: [],
         top_news: [],
         image_news: [],
@@ -16,12 +17,33 @@ var vm = new Vue({
     methods: {
         // 初始化显示顶部的新闻数据
         init_top_news: function () {
-           
+            // console.log('11111');
+            axios.get(this.host+'news/top/')
+                .then(response => {
+                    // alert(response)
+                    this.slide_news = response.data.slide_news;
+                    this.top_news = response.data.top_news;
+                    this.image_news = response.data.image_news;
+                    // console.log(response.data);
+                    // console.log(this.top_news);
+                    // alert(response)
+                })
+                .catch(error => {
+                    console.log(error.response.data)
+                });
         },
 
         // 初始化显示类别新闻数据
         init_category_news: function () {
-           
+            axios.get(this.host+'news/category/')
+                .then(response => {
+                    this.categories=response.data;
+
+                    // console.log(response.data);
+                    // console.log(this.top_news);
+                })
+
+
         },
     },
 

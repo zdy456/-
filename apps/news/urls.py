@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from news import views
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('users')),
+    url(r'^news/top/$', views.NewTopAPIview.as_view()),
+    url(r'^news/category/$', views.CategoryNewAPIview.as_view()),
 
 ]
