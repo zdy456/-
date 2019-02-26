@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',  # 注册解决跨域请求的包
     'rest_framework',  # 注册rest框架
-    'apps.users',  # 注册用户应用
-    'apps.carts',  # 注册购物车应用
-    'apps.goods',  # 注册商品应用
-    'apps.news',  # 注册新闻应用
+    'users',  # 注册用户应用
+    'carts',  # 注册购物车应用
+    'goods',  # 注册商品应用
+    'news',  # 注册新闻应用
 ]
 # 注册自定义的用户模型类
 AUTH_USER_MODEL = 'users.User'

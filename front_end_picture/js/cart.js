@@ -3,7 +3,7 @@
     data: {
         host: 'http://127.0.0.1:8000',
         goods_list: [],         // 购物车中的商品
-        origin_input: 1,        // 商品数量
+        origin_input: 1         // 商品数量
     },
 
     computed: {

@@ -22,4 +22,6 @@ urlpatterns = [
     # url(r'^', include('goods.urls')),
     url(r'^', include('news.urls')),
     # url(r'^', include('carts.urls')),
+    # url(r'^', include('news.urls')),
+    url(r'^', include('carts.urls')),
 ]
