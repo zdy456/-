@@ -1,4 +1,4 @@
-﻿var vm = new Vue({
+﻿var vm1 = new Vue({
     el: '#app',
     data: {
         host: 'http://127.0.0.1:8000',

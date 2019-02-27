@@ -12,28 +12,40 @@ var vm = new Vue({
 
     mounted: function () {
         this.get_list_goods();
-        this.get_current_category();
+        // this.get_current_category();
     },
 
     methods: {
         // 获取商品列表数据
         get_list_goods: function () {
             // 拼接请求的查询字符串的值
-            let query_string = window.location.search;
+            // let query_string = window.location.search;
+            let query_string = null;
             if (query_string !== null) {
                 query_string += '&ordering=' + this.ordering;
             } else {
                 query_string = '?ordering=' + this.ordering;
             }
+            // 获取url中的类别id
+            let category_id = this.get_query_string('category');
 			//发送请求
+            axios.get('http://127.0.0.1:8000/categories/'+category_id+'/'+query_string)
+            .then(response => {
+                this.category = response.data.category_guide;
+                this.goods_list = response.data.goods_content;
+            })
+            .catch(error => {
+                console.log(error.response.data)
+            });
         },
 
-        // 获取当前显示的类别
-        get_current_category: function () {
-            // 获取url中的类别id
-            var category_id = this.get_query_string('category');
-            //发送请求
-        },
+        // // 获取当前显示的类别
+        // get_current_category: function () {
+        //     // 获取url中的类别id
+        //     var category_id = this.get_query_string('category');
+        //     //发送请求
+        //
+        // },
 
         // 获取url路径参数
         get_query_string: function(name){
