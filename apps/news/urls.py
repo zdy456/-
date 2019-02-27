@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-urlpatterns = [
+from news import views
 
+urlpatterns = [
+    url(r'^news/top/$', views.NewTopAPIview.as_view()),
+    url(r'^news/category/$', views.CategoryNewAPIview.as_view()),
 ]

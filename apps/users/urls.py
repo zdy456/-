@@ -19,5 +19,4 @@ from users import views
 
 urlpatterns = [
     url(r'^test/$', views.testview),
-
 ]

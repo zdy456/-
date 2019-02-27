@@ -598,3 +598,26 @@ function get_query_string(name) {
     }
     return null;
 }
+
+function get_cart_count() {
+    $.ajax({
+        url: host + '/carts/count/',
+        type: 'GET',
+        dataType: 'json',
+        xhrFields: {
+            withCredentials: true
+        },
+        crossDomain: true,
+        success:function(dat){
+            console.log(dat.count);
+            if (dat.count > 0){
+                $('#cart_count').html('购物车(' + dat.count + ')')
+            }else{
+                $('#cart_count').html('购物车')
+            }
+        },
+        error:function(){
+            console.log('服务器超时，请重试！');
+        }
+    });
+}
